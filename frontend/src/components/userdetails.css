@@ -3,7 +3,7 @@
 }
 
 .profile-card {
-	background: #ffb300;
+	background-color: #ffb300;
 	position: relative;
 	left: 50%;
 	overflow: auto;
@@ -76,11 +76,6 @@
 	text-align: center;
 	-webkit-animation: moveIn 1s 3.1s ease forwards;
 	animation: moveIn 1s 3.1s ease forwards;
-}
-
-.userDetailsCard {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 }
 
 .userDetailsSection {

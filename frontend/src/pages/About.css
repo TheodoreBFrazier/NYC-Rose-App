@@ -1,110 +1,69 @@
+.aboutContainer {
+	display: flex;
+	justify-content: center;
+}
+.valuesContainer {
+	display: flex;
+	flex-direction: column;
+}
+.eachContainer {
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 1em;
+	padding: 2em;
+	background-color: #222b2f;
+}
+.values {
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	padding: 30px;
+	background-color: #222b2f;
+}
+
 .about {
 	padding: 40px;
 	display: flex;
 	flex-direction: column;
-	background-color: #14213d;
+}
+.aboutDescrption {
+	color: white;
 }
 
 .about h2 {
 	margin: auto;
-	color: white;
-	padding-top: 50px;
-	border-radius: 5px 10px;
-	width: 250px;
+	padding: 40px;
+	margin: 40px;
 	text-align: center;
+}
+.about span {
+	border-bottom: 2px solid rgb(82, 79, 79);
+	font-size: 18px;
 }
 
 .about p {
-	width: 65%;
-	margin: auto;
 	color: white;
-	text-align: center;
-}
-
-.about-container-one {
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
+	width: 50%;
+	font-size: 18px;
 	margin: auto;
 	text-align: center;
-	width: 80%;
-	padding-bottom: 60px;
-	left: 20px;
+	line-height: 2;
 }
-
-.valueNmission img {
-	padding: 20px 10px 20px 10px;
-	margin: 150px 0 0 80px;
-	width: 300px;
-	height: 350px;
-	border-width: 3em;
-	border: 1px solid black;
-	border-color: rgb(125, 190, 234);
-}
-
-.about-container-two {
-	padding-top: 40px;
-	display: grid;
-	grid-template-columns: repeat(2fr 1fr);
-	list-style: none;
-	margin-bottom: 100px;
-}
-
-.about-container-two h2 {
-	margin: auto;
-}
-
-.about-container-two img {
-	width: 380px;
-	height: 300px;
-}
-
-.teammate {
-	padding: 50px;
-	margin: 30px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-@media (max-width: 767px) {
-	.valueNmission {
-		display: table-column;
-		font-style: oblique;
+@media (max-width: 700px) {
+	.aboutContainer {
+		display: block;
 	}
-	.valueNmission img {
-		display: none;
+	.values {
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		padding: 5px;
 	}
-	.aboutCard {
-		display: flex;
-		flex-direction: column;
+	.about p {
 		width: 100%;
+		font-size: 10px;
+		padding: 1em;
+		text-align: center;
+		line-height: 1.8;
 	}
-	.aboutCardImg {
-		height: 200px;
-	}
-}
-
-@media (max-width: 1024px) {
-	.aboutCard {
-		display: flex;
-		flex-direction: column;
-		width: 90%;
-	}
-	.about-container-two img {
-		width: 280px;
-		height: 200px;
-	}
-	.aboutCardImg {
-		height: 300px;
-	}
-
-	.teammate {
-		padding: 20px;
-		display: list-item;
-		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-			rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-		list-style: none;
-	}
-	.about h2 {
-		margin-bottom: 20px;
+	.valuesContainer {
+		margin: 0em;
 	}
 }

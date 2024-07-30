@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import RightNav from "./RightNav";
 
@@ -7,11 +7,11 @@ const StyledBurger = styled.div`
 	height: 2rem;
 	position: fixed;
 	right: 20px;
-	top: 50px;
-	z-index: 21;
+	z-index: 25;
 	display: none;
 
 	@media (max-width: 768px) {
+		position: fixed;
 		display: flex;
 		justify-content: space-around;
 		flex-flow: column nowrap;
@@ -40,32 +40,21 @@ const StyledBurger = styled.div`
 	}
 `;
 
-export default function Burger({ logText, setLogText }) {
-	// drop down functionality
-	const [dropdown, setDropdown] = useState(false);
-	const [open, setOpen] = useState(false);
-	// state for the drop down close or open
-	const [click, setClick] = useState(false);
-
-	const onMouseClick = () => {
-		setDropdown(true);
-	};
-	const onMouseUnclick = () => {
-		setDropdown(false);
-	};
-
+export default function Burger({
+	logText,
+	setLogText,
+	open,
+	setOpen,
+	dropdown,
+	setDropdown,
+}) {
 	const toggleMouseClick = () => {
-		dropdown ? onMouseUnclick() : onMouseClick();
+		setDropdown(!dropdown);
 	};
-	const handleClick = () => setClick(!click);
 
 	const toggleOpen = () => {
 		setDropdown(false);
 		setOpen(!open);
-	};
-
-	const toggleDropdownOpen = () => {
-		setClick(!click);
 	};
 	return (
 		<>
@@ -73,8 +62,6 @@ export default function Burger({ logText, setLogText }) {
 				open={open}
 				onClick={() => {
 					toggleOpen();
-					toggleDropdownOpen();
-					// toggleMouseClick();
 				}}
 				className="mainHam"
 			>
@@ -83,18 +70,12 @@ export default function Burger({ logText, setLogText }) {
 				<div />
 			</StyledBurger>
 			<RightNav
-				handleClick={handleClick}
-				click={click}
 				open={open}
 				setOpen={setOpen}
 				logText={logText}
 				setLogText={setLogText}
-				setClick={setClick}
-				toggleDropdownOpen={toggleDropdownOpen}
 				toggleOpen={toggleOpen}
 				dropdown={dropdown}
-				onMouseClick={onMouseClick}
-				onMouseUnclick={onMouseUnclick}
 				toggleMouseClick={toggleMouseClick}
 				setDropdown={setDropdown}
 			/>

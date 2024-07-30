@@ -8,7 +8,7 @@ Team Members:
 
 Lili Huang
 Mukayila Alao
-Nima $herpa
+Nima Sherpa
 David Vidals
 Theodore Frazier
 
@@ -19,11 +19,10 @@ npm install
 Backend:
 npm install
 
-Heroku (backend):
+Render (backend) :
 
-https://capstone-g5-pursuit.herokuapp.com/
+- https://eduk.onrender.com/
 
-Netlify (frontend):
+Netlify (frontend) :
 
-https://eduk.netlify.app
-
+- https://edukapp.netlify.app/

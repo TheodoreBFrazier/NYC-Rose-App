@@ -1,8 +1,8 @@
-/* New createresources css  */
-
 .create-resource-checkboxes {
-	display: flex;
+	color: white;
 	font-size: 10px;
+	display: flex;
+	justify-content: center;
 }
 
 .create-resource-checkboxes div label {
@@ -21,7 +21,6 @@
 }
 @keyframes theform {
 	0% {
-		margin-left: -30px;
 		opacity: 0;
 	}
 	33% {
@@ -31,12 +30,15 @@
 		opacity: 0.6;
 	}
 }
+.select-container {
+	outline: none;
+}
 .newForm h1 {
 	color: #003458;
 }
 .newForm form {
 	border-radius: 10px;
-	background-color: #b2dfff;
+	background-color: #222b2f;
 	padding: 60px;
 	margin-top: 60px;
 	box-shadow: rgba(67, 64, 64, 0.16) 0px 1px 4px;
@@ -47,9 +49,9 @@
 	margin: 20px;
 	width: 100%;
 	transition: 0.3s ease-in;
-	opacity: 0.8;
 	padding: 5px;
 	border-radius: 3px;
+	outline: none;
 }
 .newForm div textarea {
 	font-size: 20px;
@@ -60,7 +62,29 @@
 	opacity: 0.8;
 	padding: 5px;
 	border-radius: 3px;
+	outline: none;
 }
 .newForm div input:hover {
-	opacity: 0.3;
+	opacity: 0.9;
+}
+
+@media (max-width: 750px) {
+	.newForm form {
+		width: 320px;
+	}
+
+	.create-resource-checkboxes {
+		display: block;
+	}
+	.newForm div textarea {
+		font-size: 10px;
+	}
+	.newForm div input {
+		font-size: 10px;
+	}
+	.create-resource-checkboxes {
+		font-size: 10px;
+		display: flex;
+		justify-content: center;
+	}
 }

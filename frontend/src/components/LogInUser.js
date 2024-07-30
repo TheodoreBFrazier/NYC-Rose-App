@@ -5,6 +5,7 @@ import React from "react";
 import "../css/LogIn.css";
 import { Link } from "react-router-dom";
 import GeneralShowMessage from "./GeneralShowMessage";
+import login from "../images/login.png";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -14,20 +15,16 @@ function LogInUser({ setLogText, mentors }) {
 		user_name: "",
 		password: "",
 	});
-	//show error to user
-	const [error, setError] = useState("");
 	const [open, setOpen] = useState(false);
 
 	const logIn = () => {
-		setError("");
 		axios
+			// , { withCredentials: true }
 			.post(`${API}/auth/login`, user)
 			.then((res) => {
 				const userInfo = res.data.result;
 				const userId = userInfo.uid;
 				if (!isNaN(userId)) {
-					// console.log(userInfo);
-					setError("");
 					//set userId in localStorage
 					localStorage.setItem("userId", `${userId}`);
 					//set userInfo in localStage
@@ -45,7 +42,6 @@ function LogInUser({ setLogText, mentors }) {
 			})
 			.catch((c) => {
 				if (c.response && c.response.data) {
-					setError(c.response.data.error);
 					setOpen(true);
 				}
 			});
@@ -60,8 +56,6 @@ function LogInUser({ setLogText, mentors }) {
 		logIn();
 	};
 
-	//message
-
 	const handleClose = (event, reason) => {
 		if (reason === "clickaway") {
 			return;
@@ -70,11 +64,24 @@ function LogInUser({ setLogText, mentors }) {
 		setOpen(false);
 	};
 
+	const messages = [
+		"Uh-oh! Did you forget your password or did it just go on vacation? 😅🔑",
+		"Looks like something went awry! Maybe your password is taking a nap? 💤🔐",
+		"Whoopsie! Either your password is playing hide and seek or it's on a coffee break. ☕🕵️",
+		"Yikes! Your login just had a tiny hiccup. Give it another shot, superhero! 🦸‍♂️💥",
+	];
+
+	// Function to get a random message
+	const getRandomMessage = () => {
+		const randomIndex = Math.floor(Math.random() * messages.length);
+		return messages[randomIndex];
+	};
+
 	return (
 		<div className="user-login-form">
 			<GeneralShowMessage
 				severity="error"
-				message={error}
+				message={getRandomMessage()}
 				open={open}
 				anchorOrigin={{
 					vertical: "top",
@@ -82,31 +89,37 @@ function LogInUser({ setLogText, mentors }) {
 				}}
 				handleClose={handleClose}
 			/>
-			<form onSubmit={handleSubmit} className="login-form">
-				<h2>Login Here</h2>
-				<input
-					placeholder="Username"
-					type="text"
-					id="user_name"
-					onChange={handleChange}
-					value={user.user_name}
-				/>
-				<input
-					placeholder="Password"
-					type="password"
-					id="password"
-					onChange={handleChange}
-					value={user.password}
-				/>
-
-				<button className="login-submit">Log In</button>
-				<div style={{ fontSize: "20px", fontWeight: "600" }}>
-					NEW TO EDUK ? &nbsp;
-					<Link style={{ color: "blue", fontSize: "15px" }} to="/users/create">
-						Sign up here !!
-					</Link>
+			<div className="loginDivider">
+				<div className="firstLoginDiv">
+					<img alt="login page img" className="loginImg" src={login} />
 				</div>
-			</form>
+
+				<div>
+					<form onSubmit={handleSubmit} className="login-form">
+						<h3>Log In</h3>
+						<input
+							placeholder="Username"
+							type="text"
+							id="user_name"
+							onChange={handleChange}
+							value={user.user_name}
+						/>
+						<input
+							placeholder="Password"
+							type="password"
+							id="password"
+							onChange={handleChange}
+							value={user.password}
+						/>
+
+						<button className="login-submit">Log In</button>
+						<div>
+							NEW TO EDUK ? &nbsp;
+							<Link to="/users/create">Sign up here !!</Link>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	);
 }

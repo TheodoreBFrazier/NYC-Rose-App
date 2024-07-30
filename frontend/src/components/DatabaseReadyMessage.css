@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* Keyframes for transitioning background */
+@keyframes backgroundColorChange {
+	0% {
+		background-color: #ffffff; /* Plain background */
+	}
+	100% {
+		background: linear-gradient(
+			135deg,
+			#ffcc00,
+			#ff6699,
+			#66ccff
+		); /* Colorful gradient background */
+	}
+}
+
+/* Keyframes for fading in */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.resourcesBody {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	background-color: #ffffff; /* Start with a plain color */
+	font-family: "Press Start 2P", cursive;
+	margin: 0;
+	overflow: hidden;
+	animation: backgroundColorChange 2s ease-in-out 1s forwards; /* Apply gradient after 1 second */
+	opacity: 0; /* Initial opacity for fade-in effect */
+	visibility: hidden; /* Initial visibility for fade-in effect */
+	animation: fadeIn 2s ease-in-out 1s forwards,
+		backgroundColorChange 2s ease-in-out 1s forwards; /* Apply animations */
+}
+
+.containerResource {
+	text-align: center;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	background: rgba(255, 255, 255, 0.9);
+	width: 90%;
+	max-width: 600px; /* Larger max-width for larger screens */
+}
+
+.title {
+	font-size: 2.5em;
+	color: #ff3333; /* Bright red for title */
+	margin-bottom: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.message {
+	font-size: 1.3em;
+	color: #333;
+	margin-bottom: 15px;
+}
+
+.emoji {
+	font-size: 2em;
+	margin: 15px 0;
+}
+
+@keyframes fadeText {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(-1deg);
+	}
+	50% {
+		transform: rotate(1deg);
+	}
+	100% {
+		transform: rotate(-1deg);
+	}
+}
+
+.message {
+	animation: fadeText 2s ease-in-out;
+}
+
+.title {
+	animation: shake 0.5s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+	.containerResource {
+		width: 95%;
+		padding: 20px;
+		max-width: 500px; /* Adjust max-width for smaller screens */
+	}
+
+	.title {
+		font-size: 2em;
+	}
+
+	.message {
+		font-size: 1.2em;
+	}
+
+	.emoji {
+		font-size: 1.8em;
+	}
+}
+
+@media (max-width: 400px) {
+	.containerResource {
+		width: 100%;
+		padding: 15px;
+		max-width: 400px; /* Further reduced max-width for very small screens */
+	}
+
+	.title {
+		font-size: 1.8em;
+	}
+
+	.message {
+		font-size: 1.1em;
+	}
+
+	.emoji {
+		font-size: 1.6em;
+	}
+}
+
+@media (min-width: 1200px) {
+	.containerResource {
+		max-width: 800px; /* Larger max-width for very large screens */
+	}
+
+	.title {
+		font-size: 3em;
+	}
+
+	.message {
+		font-size: 1.5em;
+	}
+
+	.emoji {
+		font-size: 2.5em;
+	}
+}

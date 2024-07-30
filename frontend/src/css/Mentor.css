@@ -19,13 +19,11 @@
 }
 
 .card__email {
-	/* font-style: italic; */
 	font-family: "Courier New", Courier, monospace;
 	font-weight: 600;
 }
 
 .card__speciality {
-	/* font-style: italic; */
 	font-family: "Courier New", Courier, monospace;
 	font-weight: 600;
 }
@@ -49,5 +47,9 @@
 @media (max-width: 750px) {
 	.mentor-list {
 		display: block;
+		margin-bottom: 10px;
+	}
+	.whole__card {
+		margin-bottom: 10px;
 	}
 }

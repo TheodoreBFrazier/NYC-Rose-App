@@ -38,9 +38,9 @@
 
 .resourceMainBtn {
 	margin: 0px 150px 0px 150px;
-	padding-bottom: 30px;
-	display: grid;
-	grid-template-columns: 20% 10% 45% 35%;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: flex-start;
 }
 
 .resourceMainBtn button {
@@ -76,11 +76,10 @@
 .resource-card {
 	display: flex;
 	justify-content: center;
-	height: auto;
 }
 
 .resource-card h4 {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 /* resource into  */
@@ -111,7 +110,7 @@
 	display: grid;
 	justify-items: center;
 	grid-template-columns: 1fr 1fr 1fr;
-	row-gap: 60px;
+	row-gap: 40px;
 }
 
 .resource-arr a {
@@ -121,43 +120,51 @@
 .resource-arr p {
 	font-size: 12pt;
 }
-
+/* ipad */
 @media (max-width: 1024px) {
 	.resource-arr {
 		grid-template-columns: 1fr 1fr;
 	}
 	.resource-text {
 		margin-left: 60px;
-		height: auto;
 		width: 600px;
 	}
 	.resource-heading {
 		margin-left: 60px;
 	}
-
 	.resourceMainBtn {
-		margin: 10px 250px 10px 250px;
-		padding-bottom: 30px;
+		margin: 0px;
+		padding-bottom: 10px;
 		display: flex;
 		justify-content: center;
 	}
 }
+/* phone  */
 @media (max-width: 767px) {
 	.resource-arr {
 		grid-template-columns: 1fr;
 	}
+	.resource-card {
+		width: 310px;
+	}
 	.resource-text {
-		height: auto;
-		width: 400px;
+		width: 350px;
 		margin-left: 10px;
+	}
+	.resource-text p {
+		margin: 20px;
+		padding: 20px;
 	}
 	.resource-heading {
 		margin-left: 30px;
 	}
-
+	.resourceMainBtn div {
+		margin: 2px;
+	}
 	.resourceMainBtn {
-		margin: auto;
-		display: grid;
-		grid-template-columns: 12% 3% 57% 28%;
+		margin: 0px;
+		padding-bottom: 10px;
+		display: flex;
+		justify-content: center;
 	}
 }

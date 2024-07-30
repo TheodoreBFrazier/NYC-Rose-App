@@ -56,7 +56,6 @@ const createResource = async (uid, resource) => {
 			);
 			return user_resource;
 		}
-
 		//create a new resource
 		else {
 			const createdResouce = await db.one(

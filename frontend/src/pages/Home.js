@@ -1,23 +1,11 @@
 import React from "react";
-import Background from "../images/home.jpg";
+// import Background from "../images/home.jpg";
 import { Link } from "react-router-dom";
-
-const HorizontalRule = ({ color }) => (
-	<hr
-		style={{
-			color: color,
-			backgroundColor: color,
-			height: 5,
-			width: '300px',
-		}}
-	/>
-);
-
 
 function Home() {
 	return (
 		<div className="Home">
-			<div className="Hero" style={{ backgroundImage: `url(${Background})` }}>
+			<div className="Hero">
 				<div className="Hero-text">
 					<h1>
 						TIME TO EVEN <br /> THE PLAYING FIELD
@@ -32,7 +20,7 @@ function Home() {
 						<div>
 							<Link to="/mentors/create">
 								<button>
-									<h3>Join us become a Mentor</h3>
+									<h4>Join us become a Mentor</h4>
 								</button>
 							</Link>
 						</div>
@@ -44,7 +32,7 @@ function Home() {
 				<div className="intro-container">
 					<img
 						alt="homeimg"
-						src="https://nces.ed.gov/images/homepage/coe.jpg"
+						src="https://media.istockphoto.com/vectors/computer-lab-abstract-concept-vector-illustration-vector-id1353786683?k=20&m=1353786683&s=612x612&w=0&h=qOnTLR1tqTPTsqtZl1wKi6tiuDxF-Le0KRKnuUZ7oBU="
 					/>
 					<p>
 						The goal of EDUK to connect highschool, college students, minority
@@ -57,56 +45,6 @@ function Home() {
 						easily find resources they desperately need to improve their quality
 						of life.
 					</p>
-				</div>
-				<div className="why-eduk">
-					<h1>
-						SERVICES WITH YOU IN MIND
-					</h1>
-
-					<br />
-
-					<div className="rule">
-						<HorizontalRule color="black" />
-					</div>
-
-
-					<br />
-					<br />
-					<div className="services-icons">
-						<div className="icons-mentor">
-							<img src="https://cdn-icons-png.flaticon.com/128/767/767388.png" alt="helping" />
-							<br />
-							<br />
-							<p> A selection of mentors <br />
-								to help you achieve your goals <br />
-							</p>
-
-						</div>
-
-						<div className="icons-mentor">
-							<img src="https://cdn-icons-png.flaticon.com/128/767/767388.png" alt="helping" />
-							<br />
-							<br />
-							<p> A selection of mentors <br />
-								to help you achieve your goals <br />
-							</p>
-
-						</div>
-
-
-						<div className="icons-resources">
-							<img src="https://cdn-icons-png.flaticon.com/128/500/500425.png" alt="resources" />
-							<br />
-							<br />
-							<p> A selection of mentors <br />
-								to help you achieve your goals <br />
-							</p>
-
-						</div>
-
-					</div>
-
-
 				</div>
 			</div>
 		</div>

@@ -5,20 +5,25 @@ import "./NavBar.css";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 const Ul = styled.ul`
 	@media (max-width: 768px) {
 		flex-flow: column nowrap;
-		background-color: rgb(247 247 247);
+		background-color: inherit;
 		position: fixed;
 		transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-		top: 25px;
+		top: 0px;
 		right: 0;
-		height: 100vh;
-		width: 240px;
+		width: 180px;
 		padding-top: 3.5rem;
 		transition: 0.3s ease-in-out;
 		z-index: 20;
+		margin-top: 10px;
+		height: 340px;
+		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+			rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 	}
 `;
 
@@ -27,48 +32,44 @@ export default function RightNav({
 	setOpen,
 	logText,
 	setLogText,
-	click,
 	handleClick,
-	toggleDropdownOpen,
 	toggleOpen,
 	dropdown,
-	onMouseClick,
-	onMouseUnclick,
+	toggleMouseClick,
+	setDropdown,
 }) {
 	const logOut = () => {
 		localStorage.clear();
 		setLogText("Log In");
 	};
-
 	const userId = localStorage.getItem("userId");
-
 	//user data from local storage
 	const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
 	return (
 		<Ul open={open} className="navLinks">
-			<li
-				className="eachLi mainLi "
-				onClick={dropdown ? onMouseUnclick : onMouseClick}
-			>
-				<Link to="/resources">
-					Resources <ArrowDropDownIcon fontSize="small"></ArrowDropDownIcon>
-				</Link>
+			<li className="eachLi mainLi " onClick={toggleMouseClick}>
+				<div>
+					Resources
+					{!dropdown ? (
+						<ArrowDropDownIcon fontSize="medium"></ArrowDropDownIcon>
+					) : (
+						<ArrowDropUpIcon fontSize="medium"></ArrowDropUpIcon>
+					)}
+				</div>
 				{dropdown && (
 					<Dropdown
 						handleClick={handleClick}
-						click={click}
 						open={open}
 						toggleOpen={toggleOpen}
-						toggleDropdownOpen={toggleDropdownOpen}
 						setOpen={setOpen}
+						setDropdown={setDropdown}
 					/>
 				)}
 			</li>
 			<li
 				onClick={() => {
 					toggleOpen();
-					toggleDropdownOpen();
 				}}
 				className="eachLi mainLi"
 			>
@@ -81,7 +82,6 @@ export default function RightNav({
 				<li
 					onClick={() => {
 						toggleOpen();
-						toggleDropdownOpen();
 					}}
 					className="eachLi mainLi"
 				>
@@ -91,7 +91,6 @@ export default function RightNav({
 				<li
 					onClick={() => {
 						toggleOpen();
-						toggleDropdownOpen();
 					}}
 					className="eachLi mainLi"
 				>
@@ -102,7 +101,6 @@ export default function RightNav({
 			<li
 				onClick={() => {
 					toggleOpen();
-					toggleDropdownOpen();
 				}}
 				className="eachLi mainLi"
 			>
@@ -115,7 +113,6 @@ export default function RightNav({
 			<div
 				onClick={() => {
 					toggleOpen();
-					toggleDropdownOpen();
 				}}
 				className="loginIcon"
 			>
@@ -129,9 +126,9 @@ export default function RightNav({
 					<Link to="/users/login">
 						<Button
 							variant="contained"
-							size="medium"
+							size="small"
 							style={{
-								background_color: "rgb(22 38 85)",
+								background_color: "rgb(35 40 63)",
 								fontSize: "18px",
 							}}
 						>

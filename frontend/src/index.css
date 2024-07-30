@@ -16,14 +16,6 @@ code {
 		monospace;
 }
 
-/* TYPOGRAPHY */
-
-/* Importing Font */
-
-/* Regular */
-
-/* Italics */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400&display=swap");
 
 h1 {
@@ -55,12 +47,6 @@ p {
 	font-family: "Roboto", sans-serif;
 }
 
------------------------------- HOME --------------------------------------
-/* HERO PAGE */
-/* .home {
-	position: relative;
-} */
-
 .Hero-text {
 	z-index: 9;
 }
@@ -69,26 +55,26 @@ p {
 	color: white;
 	font: bold 60px Poppins, sans-serif;
 	text-align: center;
-	padding-top: 300px;
-	font-weight: 600;
-	/* position: relative; */
+	padding-top: 100px;
+	font-weight: 300;
 	z-index: 2;
 }
 
 .Hero .Hero-text h3 {
 	text-align: center;
-	/* position: relative; */
 	z-index: 9;
 	color: white;
 }
 
 .Hero {
+	height: 60vh;
 	margin: 0;
-	height: 100vh;
-	/* background-image: url("https://cdn.dribbble.com/users/1626229/screenshots/14556747/media/ceb42cd2838a68f02e27032469c01870.jpg"); */
 	margin-bottom: 110px;
 	background-color: #cccccc;
 	background-size: cover;
+	background: #000000;
+	background: -webkit-linear-gradient(to right, #434343, #000000);
+	background: linear-gradient(to right, #434343, #000000);
 }
 
 .Hero-text h1 {
@@ -107,11 +93,9 @@ p {
 	margin: 30px;
 }
 
-/* Making button lettes spread out on hover*/
-
 .joinUs button {
 	text-transform: uppercase;
-	color: #9dfdff;
+	color: #007688;
 	cursor: pointer;
 	border: none;
 	background-color: Transparent;
@@ -121,7 +105,7 @@ p {
 	transition-timing-function: ease;
 }
 
-.joinUs button h3 {
+.joinUs button h4 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
@@ -168,10 +152,10 @@ p {
 }
 
 .intro-container {
-	width: 80%;
-	margin: 60px;
-	align-items: center;
 	display: grid;
+	width: 80%;
+	margin: auto;
+	align-items: center;
 	grid-template-columns: repeat(2, 1fr);
 	margin-top: 120px;
 	margin-bottom: 120px;
@@ -182,6 +166,9 @@ p {
 	font-size: 20px;
 	font-family: sans-serif;
 }
+.intro-container img {
+	height: 70%;
+}
 
 @media (max-width: 750px) {
 	.intro-container p {
@@ -189,11 +176,11 @@ p {
 	}
 
 	.Hero .Hero-text h1 {
-		font-size: 40px;
+		font-size: 30px;
 	}
 
 	.Hero .Hero-text h3 {
-		font-size: 20px;
+		font-size: 10px;
 	}
 
 	.joinUs h3 {
@@ -219,7 +206,7 @@ p {
 	}
 
 	.intro-container img {
-		height: 180px;
+		height: 300px;
 		margin-bottom: 30px;
 	}
 	.intro-container p {

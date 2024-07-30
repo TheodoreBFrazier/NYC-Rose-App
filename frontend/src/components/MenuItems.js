@@ -1,5 +1,10 @@
 export const MenuItems = [
 	{
+		title: "All Resources",
+		path: "/resources",
+		name: "dropdown-link",
+	},
+	{
 		title: "Highschool",
 		path: "/highschool",
 		name: "dropdown-link",
